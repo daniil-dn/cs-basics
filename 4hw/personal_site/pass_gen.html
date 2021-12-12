@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Личный сайт</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_gen_pass.css">
+</head>
+<body>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+    function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+    }
+
+    function readInt(name) {
+        var number = document.getElementById(name).value;
+        return parseInt(number);
+        // return +document.getElementById("userAnswer").value;
+    }
+
+    function write(text, id) {
+        document.getElementById(id).innerHTML = text;
+    }
+
+    function hide(id) {
+        document.getElementById(id).style.display = "none";
+    }
+
+    function gen_pass() {
+        var pass_quant = readInt('pass_quantity');
+        console.log(pass_quant)
+        if (pass_quant > 0 && pass_quant <= 20) {
+            let password = ''
+            let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            for (let i = 0; i < pass_quant; i++) {
+                console.log(i + "  : ")
+                n =Math.floor(Math.random()*charset.length)
+                password = password + charset.charAt(n);
+            }
+            write(password, 'pass_to_copy')
+        }
+    }
+</script>
+<div class="content">
+    <div class="header">
+        <a href="index.html">Главная</a>
+        <a href="puzzle.html">Загадки</a>
+        <a href="guess.html">Угадайка</a>
+    </div>
+
+    <h1>Генератор паролей</h1>
+
+    <div class="center">
+        <h5>Из скольки символов будет состоять пароль?</h5>
+        <div class="gen_pass_wrapper">
+            <input placeholder='Число от 1 до 20' type="text" id="pass_quantity">
+            <a href="#" class="pass_request" onclick="gen_pass()">Сгенерировать</a>
+        </div>
+        <h5>Ваш новый пароль:</h5><br>
+        <button class="generated_pass" title="Кликни и скопируй" id="pass_to_copy"
+                onclick="copyToClipboard('#pass_to_copy')">Здесь будет пароль
+        </button>
+        <p>нажми, чтобы скопировать</p>
+    </div>
+</div>
+<div class="footer">
+    Copyright &copy; Dosin Daniil
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Личный сайт</title>
+	<link rel="stylesheet" href="style.css"> 
+	<script type="text/javascript">
+
+
+
+		function checkAnswer(inputId, answers){
+			var userAnswer = document.getElementById(inputId).value;
+			userAnswer = userAnswer.toLowerCase();
+			for(var i = 0; i < answers.length; i++){
+				if(userAnswer == answers[i]){
+					score++;
+					break;
+				}
+			}
+		}
+		
+		function checkAnswers() {
+			score=0;
+			checkAnswer("userAnswer1", ["обед", "ужин"]);
+			checkAnswer("userAnswer2", ["почтовая марка", "марка"]);
+			checkAnswer("userAnswer3", ["тень", "тень слона"]);
+			checkAnswer("userAnswer4", ["неправильно", "слово неправильно"]);
+
+			alert("Вы отгадали " + score + " загадок");
+
+		}
+
+	</script>
+</head>
+<body>
+
+<div class="content">
+	<div class="header">
+		<a href="index.html">Главная</a>
+		<a href="guess.html">Угадайка</a>
+		<a href="pass_gen.html">Генератор паролей</a>
+	</div>
+
+<div class="contentWrap">
+    <div class="content">
+        <div class="center">
+
+			<h1>Игра в загадки</h1>
+
+			<div class="box">
+
+				<p>Что ты никогда не сможешь съесть на завтрак?</p>
+				<input type="text" id="userAnswer1">
+
+				<p>Что может путешествовать по свету, оставаюсь в одном и том же углу?</p>
+				<input type="text" id="userAnswer2">
+
+				<p>Что на столько же огромное, как слон, но ничего не весит?</p>
+				<input type="text" id="userAnswer3">
+
+				<p>Какое слово в словаре написано неправильно?</p>
+				<input type="text" id="userAnswer4">
+
+				<br>
+				<a href="#" onClick="checkAnswers();">Ответить</a>
+
+			</div>
+
+        </div>
+    </div>
+</div>
+
+	
+
+</div>
+<div class="footer">
+	Copyright &copy; Vasily Pupkin
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+</html>
+
+<script>
+	alert("Игра в загадки \n" + "Начнем?");
+
+	var riddle_1 = "Что ты никогда не сможешь съесть на завтрак?";
+	var answer_1 = "обед";
+	var answer_1_2 = "ужин";
+
+	var riddle_2 = "Что может путешествовать по свету, оставаюсь в одном и том же углу?";
+	var answer_2 = "почтовая марка";
+	var answer_2_2 = "марка";
+
+	var riddle_3 = "что на столько же огромное, как слон, но ничего не весит?";
+	var answer_3 = "тень";
+	var answer_3_2 = "тень слона";
+
+	var riddle_4 = "какое слово в словаре написано неправильно?";
+	var answer_4 = "неправильно";
+	var answer_4_2 = "слово неправильно";
+
+	// var riddles_counter = 4
+	var win_count = 0;
+
+	// while(riddles_counter>=1){
+		var user_ans = prompt("Введите ответ на загадку: " + riddle_1);
+
+		if(user_ans == answer_1|| user_ans==answer_1_2){
+			alert('Угадал');
+			win_count+=1;
+		}else{
+			alert("Не угадал");
+		}
+
+	//
+	var user_ans = prompt("Введите ответ на загадку: " + riddle_2);
+
+	if(user_ans == answer_2|| user_ans==answer_2_2){
+		alert('Угадал');
+		win_count+=1;
+	}else{
+		alert("Не угадал");
+	}
+
+	var user_ans = prompt("Введите ответ на загадку: " + riddle_3);
+
+	if(user_ans == answer_3|| user_ans==answer_3_2){
+		alert('Угадал');
+		win_count+=1;
+	}else{
+		alert("Не угадал");
+	}
+
+	var user_ans = prompt("Введите ответ на загадку: " + riddle_4);
+
+	if(user_ans == answer_4|| user_ans==answer_4_2){
+		alert('Угадал');
+		win_count+=1;
+	}else{
+		alert("Не угадал");
+	}
+
+		// --riddles_counter
+	// }
+
+	alert('ИГРА ОКОНЧЕНА!');
+	alert('Ты угадал  ' + win_count + "  загадки");
+</script>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert(typeof("2" - 1))
+    var user_contribution = +prompt('Введите сумму вклада: ');
+    var user_percentage = +prompt('Введите процент, который будет начисляться ежегодно: например, 20% ');
+    var perc_ratio = user_percentage/100+1
+    // alert(perc_ratio)
+    if(isNaN(user_contribution)||isNaN(user_percentage)){
+        alert('Введите числа');
+    }else {
+        var result = 0;
+        let i = 1;
+        while(i<6){
+            user_contribution = user_contribution*perc_ratio;
+            alert('В '+ i + "год вам начислиться " + user_contribution)
+            i++;
+        }
+
+alert("Итоговая сумма вклада будет  " + user_contribution);
+    }[].l
+
+</script>
+</body>
+</html>

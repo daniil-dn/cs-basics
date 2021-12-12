@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+</html>
+
+<script>
+    alert("Игра в загадки \n" + "Начнем?");
+
+    function check_answer(user_ans, riddles_answers){
+        if (Array.isArray(user_ans)) {
+            for (var ans_count = 0; ans_count < user_ans.length; i++) {
+                if (user_ans[i].replace(" ", '') === riddles_answers[1] || user_ans[i].replace(" ", '') === riddles_answers[2]) {
+                    console.log('user - ' + user_ans[i])
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+        /*else{
+            if (user_answer === riddles_array[i][1] || user_answer === riddles_array[i][2]) {
+                return true
+            } else {
+                return false
+            }
+        }*/
+    }
+
+    var riddles_array = [["Что ты никогда не сможешь съесть на завтрак?", "обед", "ужин"],
+        ["Что может путешествовать по свету, оставаюсь в одном и том же углу?", "почтовая марка", "марка"],
+        ["что на столько же огромное, как слон, но ничего не весит?", "тень", "тень слона"],
+        ["какое слово в словаре написано неправильно?", "неправильно", "слово неправильно"]]
+
+    // var riddles_counter = 4
+    var win_count = 0;
+
+    for (var i = 0; i < riddles_array.length; i++) {
+        var user_answer = prompt("Введите ответ на загадку: " + riddles_array[i][0]).toLowerCase();//ответ на каждую загадку
+        user_answer = user_answer.split(',');
+        console.log(user_answer);
+        if (check_answer(user_answer, riddles_array[i])) {
+            alert('Угадал');
+            win_count+=1;
+        } else {
+            alert('не угадал');
+        }
+
+    }
+    alert('ИГРА ОКОНЧЕНА!');
+    alert('Ты угадал  ' + win_count + "  загадки");
+</script>
+

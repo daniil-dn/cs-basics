@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function compareNumbers(a, b) {
+        return a - b;
+    }
+
+    function a(n) {
+        let res_array = [];
+        for (let i = 1; i <= n; i++) {
+            res_array.push(i);
+        }
+        console.log(res_array);
+        return res_array;
+    }
+
+    function b(array_in) {
+        let res = 0;
+        for (let i = 0; i < array_in.length; i++) {
+            console.log(i, "---");
+            console.log(array_in[i]);
+            res += array_in[i];
+        }
+        return res;
+    }
+
+    function c(z_nums) {
+        z_nums.sort(compareNumbers);
+        return (z_nums[z_nums.length - 1]);
+    }//возврат максимального числа
+    function d(z_nums) {
+        z_nums.sort(compareNumbers);
+        return (z_nums[0]);
+    }//возврат минимального числа
+    function f(z_nums_array) {
+        let z_even_nums_array = [];
+        for (let i = 0; i < z_nums_array.length; ++i) {
+            let num = z_nums_array[i];
+            if (num % 2 === 0) {
+                z_even_nums_array.push(num);
+            }
+
+        }
+        return z_even_nums_array;
+    }/*Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает
+    только четные числа из этого массива. Чтобы определить четность числа, воспользуйтесь
+    оператором для подсчета остатка от деления: x % 2. Если остаток от деления числа на 2 равен 0, число будет четное*/
+
+</script>
+</body>
+</html>
